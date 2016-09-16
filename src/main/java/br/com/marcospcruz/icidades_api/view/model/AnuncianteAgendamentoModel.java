@@ -3,37 +3,47 @@ package br.com.marcospcruz.icidades_api.view.model;
 import java.util.List;
 
 import javax.swing.table.AbstractTableModel;
-import javax.swing.table.DefaultTableModel;
 
 import br.com.marcospcruz.icidades_api.dao.AgendamentoXmlDAO;
+import br.com.marcospcruz.icidades_api.dao.AnuncianteDAO;
 import br.com.marcospcruz.icidades_api.model.AgendamentoXml;
+import br.com.marcospcruz.icidades_api.model.Anunciante;
 
 public class AnuncianteAgendamentoModel extends AbstractTableModel {
 
-	private AgendamentoXmlDAO dao;
-	private static final String[] COLUNAS = new String[] {
-			"Código Agendamento", "Código Assinante" };
+	private AnuncianteDAO dao;
+	private static final String[] COLUNAS = new String[] { "Código Assinante",
+			"Código Agendamento" };
 	private String[][] linhas;
-	private static final String FIND_ALL = "Agendamentoxml.findAll";
+	private static final String FIND_ALL = "Anunciante.findAll";
 
 	public AnuncianteAgendamentoModel() {
 		super();
-		dao = new AgendamentoXmlDAO();
-		List<AgendamentoXml> dados = dao.readAll(FIND_ALL);
+		dao = new AnuncianteDAO();
+		List<Anunciante> dados = dao.readAll(FIND_ALL);
 		carregaLinhas(dados);
-		System.out.println();
+
 	}
 
-	private void carregaLinhas(List<AgendamentoXml> dados) {
+	private void carregaLinhas(List<Anunciante> dados) {
 		// TODO Auto-generated method stub
 		linhas = new String[dados.size()][COLUNAS.length];
-
+		int linha = 0;
 		for (int i = 0; i < dados.size(); i++) {
-			AgendamentoXml agendamento = dados.get(i);
-			String[] colunas = new String[COLUNAS.length];
-			colunas[0] = Integer.toString(agendamento.getId());
-			colunas[1] = Integer.toString(agendamento.getFkAnunciante());
-			linhas[i] = colunas;
+			Anunciante anunciante = dados.get(i);
+			List<AgendamentoXml> agendamento = (List<AgendamentoXml>) anunciante
+					.getAgendamentos();
+			for (int j = 0; j < agendamento.size(); j++) {
+
+				String[] colunas = new String[COLUNAS.length];
+				// colunas[0] = Integer.toString(agendamento.getId());
+				colunas[0] = anunciante.getId().toString();
+				colunas[1] = "";
+
+				colunas[1] = agendamento.get(j).getId().toString();
+				linhas[linha] = colunas;
+				linha++;
+			}
 
 		}
 

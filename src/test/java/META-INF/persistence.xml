@@ -1,15 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="icidades_api">
-		<class>br.com.marcospcruz.icidades_api.model.Agendamentoxml</class>
-		<class>br.com.marcospcruz.icidades_api.model.Anunciante</class>
-		<class>br.com.marcospcruz.icidades_api.model.AnunciantePK</class>
-		<class>br.com.marcospcruz.icidades_api.model.MapeamentoApi_Portal_Anunciante</class>
-		<class>br.com.marcospcruz.icidades_api.model.UsuariosAnunciante</class>
-		<class>br.com.marcospcruz.icidades_api.model.UsuariosAnunciantePK</class>
-		<class>br.com.marcospcruz.icidades_api.model.XmlApiPortal</class>
-		<class>br.com.marcospcruz.icidades_api.model.XmlTag</class>
-		<class>icidades_api.Anunciante</class>
-		<class>icidades_api.AnunciantePK</class>
+
+		
+		
 	</persistence-unit>
 </persistence>

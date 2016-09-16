@@ -12,13 +12,4 @@ public class AgendamentoXmlDAO extends AbstractDAO {
 		super();
 	}
 
-	@Override
-	public List<AgendamentoXml> readAll(String namedQuery) {
-		// TODO Auto-generated method stub
-		Query query = entityManager.createNamedQuery(namedQuery);
-		List<AgendamentoXml> retorno = query.getResultList();
-		super.closeEntityManager();
-		return retorno;
-	}
-
 }
