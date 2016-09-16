@@ -9,5 +9,7 @@
 		<class>br.com.marcospcruz.icidades_api.model.UsuariosAnunciantePK</class>
 		<class>br.com.marcospcruz.icidades_api.model.XmlApiPortal</class>
 		<class>br.com.marcospcruz.icidades_api.model.XmlTag</class>
+		<class>icidades_api.Anunciante</class>
+		<class>icidades_api.AnunciantePK</class>
 	</persistence-unit>
 </persistence>

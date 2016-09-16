@@ -1,5 +1,6 @@
 package br.com.marcospcruz.icidades_api;
 
+import br.com.marcospcruz.icidades_api.dao.AbstractDAO;
 import br.com.marcospcruz.icidades_api.view.MainGui;
 
 public class MainClass {
